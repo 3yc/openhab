@@ -200,8 +200,8 @@ public class MysqlPersistenceService implements QueryablePersistenceService, Man
 		}
 
 		// We have a rowId, create the table for the data
-		sqlCmd = new String("CREATE TABLE " + tableName + " (Time DATETIME, Value " + mysqlType
-				+ ", PRIMARY KEY(Time));");
+		sqlCmd = new String("CREATE TABLE " + tableName + " (Id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT, Time TIMESTAMP(6), Value " + mysqlType
+				+ ", PRIMARY KEY(Id));");
 		logger.debug("SQL: " + sqlCmd);
 
 		try {
